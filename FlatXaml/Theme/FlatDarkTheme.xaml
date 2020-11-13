@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:theme="clr-namespace:FlatXaml.Theme">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Theme/FlatLightTheme.xaml" />
+
+        <ResourceDictionary>
+
+            <!-- Colors -->
+
+            <Color x:Key="{x:Static theme:FlatThemeKeys.BackgroundDarkColor}">#000000</Color>
+            <Color x:Key="{x:Static theme:FlatThemeKeys.BackgroundRegularColor}">#212121</Color>
+            <Color x:Key="{x:Static theme:FlatThemeKeys.BackgroundLightColor}">#484848</Color>
+            <Color x:Key="{x:Static theme:FlatThemeKeys.BackgroundDisabledColor}">#737373</Color>
+
+            <Color x:Key="{x:Static theme:FlatThemeKeys.ForegroundDarkColor}">#98958e</Color>
+            <Color x:Key="{x:Static theme:FlatThemeKeys.ForegroundRegularColor}">#c9c6be</Color>
+            <Color x:Key="{x:Static theme:FlatThemeKeys.ForegroundLightColor}">#fcf9f1</Color>
+            <Color x:Key="{x:Static theme:FlatThemeKeys.ForegroundDisabledColor}">#6a6761</Color>
+
+            <!-- /Colors -->
+
+        </ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Theme/FlatThemeBrushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

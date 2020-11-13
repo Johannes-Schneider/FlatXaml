@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:theme="clr-namespace:FlatXaml.Theme">
+
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.BackgroundDark}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundDarkColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.BackgroundRegular}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegularColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.BackgroundLight}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundLightColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.BackgroundDisabled}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundDisabledColor}}" />
+    
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.ForegroundDark}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDarkColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.ForegroundRegular}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegularColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.ForegroundLight}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundLightColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.ForegroundDisabled}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDisabledColor}}" />
+    
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.PositiveDark}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.PositiveDarkColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.PositiveRegular}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.PositiveRegularColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.PositiveLight}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.PositiveLightColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.PositiveDisabled}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.PositiveDisabledColor}}" />
+    
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.NegativeDark}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.NegativeDarkColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.NegativeRegular}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.NegativeRegularColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.NegativeLight}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.NegativeLightColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.NegativeDisabled}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.NegativeDisabledColor}}" />
+    
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.HighlightDark}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.HighlightDarkColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.HighlightRegular}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.HighlightRegularColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.HighlightLight}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.HighlightLightColor}}" />
+    <SolidColorBrush options:Freeze="True" x:Key="{x:Static theme:FlatThemeKeys.HighlightDisabled}" Color="{DynamicResource {x:Static theme:FlatThemeKeys.HighlightDisabledColor}}" />
+
+</ResourceDictionary>

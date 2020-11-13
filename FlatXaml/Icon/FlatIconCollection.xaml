@@ -1,0 +1,232 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:icon="clr-namespace:FlatXaml.Icon">
+
+    <StreamGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.Cross}">
+        M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z
+    </StreamGeometry>
+
+    <RectangleGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.Minus}" Rect="3,12,18,2" />
+
+    <StreamGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.Check}">
+        M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z
+    </StreamGeometry>
+
+    <!-- Chevrons -->
+
+    <StreamGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronLeft1}">
+        M15.705,16.58L11.125,12l4.58-4.59L14.295,6l-6,6l6,6L15.705,16.58z
+    </StreamGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronLeft2}">
+        <CombinedGeometry.Geometry1>
+            M13.205,7.41L11.795 6 5.795 12 11.795 18 13.205 16.58 8.625 12 z
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            M18.205,7.41L16.795 6 10.795 12 16.795 18 18.205 16.58 13.625 12 z
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronLeft3}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M10.705,7.41L9.295 6 3.295 12 9.295 18 10.705 16.58 6.125 12 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M15.705,7.41L14.295 6 8.295 12 14.295 18 15.705 16.58 11.125 12 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            M20.705,7.41L19.295 6 13.295 12 19.295 18 20.705 16.58 16.125 12 z
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronLeft4}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M8.205,7.41L6.795 6 0.795 12 6.795 18 8.205 16.58 3.625 12 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M13.205,7.41L11.795 6 5.795 12 11.795 18 13.205 16.58 8.625 12 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M18.205,7.41L16.795 6 10.795 12 16.795 18 18.205 16.58 13.625 12 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M23.205,7.41L21.795 6 15.795 12 21.795 18 23.205 16.58 18.625 12 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <StreamGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronRight1}">
+        M8.295,7.41L9.705 6 15.705 12 9.705 18 8.295 16.58 12.875 12 z
+    </StreamGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronRight2}">
+        <CombinedGeometry.Geometry1>
+            <StreamGeometry>
+                M10.795,7.41L12.205 6 18.205 12 12.205 18 10.795 16.58 15.375 12 z
+            </StreamGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            <StreamGeometry>
+                M5.795,7.41L7.205 6 13.205 12 7.205 18 5.795 16.58 10.375 12 z
+            </StreamGeometry>
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronRight3}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M13.295,7.41L14.705 6 20.705 12 14.705 18 13.295 16.58 17.875 12 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M8.295,7.41L9.705 6 15.705 12 9.705 18 8.295 16.58 12.875 12 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            M3.295,7.41L4.705 6 10.705 12 4.705 18 3.295 16.58 7.875 12 z
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronRight4}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M15.795,7.41L17.205 6 23.205 12 17.205 18 15.795 16.58 20.375 12 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M10.795,7.41L12.205 6 18.205 12 12.205 18 10.795 16.58 15.375 12 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M5.795,7.41L7.205 6 13.205 12 7.205 18 5.795 16.58 10.375 12 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M0.795,7.41L2.205 6 8.205 12 2.205 18 0.795 16.58 5.375 12 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <StreamGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronUp1}">
+        M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z
+    </StreamGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronUp2}">
+        <CombinedGeometry.Geometry1>
+            M16.59,13.205L18 11.795 12 5.795 6 11.795 7.42 13.205 12 8.625 z
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            M16.59,18.205L18 16.795 12 10.795 6 16.795 7.42 18.205 12 13.625 z
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronUp3}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M16.59,10.705L18 9.295 12 3.295 6 9.295 7.42 10.705 12 6.125 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M16.59,15.705L18 14.295 12 8.295 6 14.295 7.42 15.705 12 11.125 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            M16.59,20.705L18 19.295 12 13.295 6 19.295 7.42 20.705 12 16.125 z
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronUp4}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M16.59,8.205L18 6.795 12 0.795 6 6.795 7.42 8.205 12 3.625 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M16.59,13.205L18 11.795 12 5.795 6 11.795 7.42 13.205 12 8.625 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M16.59,18.205L18 16.795 12 10.795 6 16.795 7.42 18.205 12 13.625 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M16.59,23.205L18 21.795 12 15.795 6 21.795 7.42 23.205 12 18.625 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <StreamGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronDown1}">
+        M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z
+    </StreamGeometry>
+    
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronDown2}">
+        <CombinedGeometry.Geometry1>
+            M7.409,10.794L5.999 12.205 11.999 18.205 17.999 12.205 16.579 10.794 11.999 15.375 z
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            M7.409,5.794L5.999 7.205 11.999 13.205 17.999 7.205 16.579 5.794 11.999 10.375 z
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronDown3}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M7.409,13.294L5.999 14.704 11.999 20.704 17.999 14.704 16.579 13.294 11.999 17.874 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M7.409,8.294L5.999 9.705 11.999 15.704 17.999 9.705 16.579 8.294 11.999 12.874 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            M7.409,3.294L5.999 4.705 11.999 10.705 17.999 4.705 16.579 3.294 11.999 7.875 z
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <CombinedGeometry options:Freeze="True" x:Key="{x:Static icon:FlatIconKeys.ChevronDown4}">
+        <CombinedGeometry.Geometry1>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M7.409,15.794L5.999 17.204 11.999 23.204 17.999 17.204 16.579 15.794 11.999 20.374 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M7.409,10.794L5.999 12.205 11.999 18.204 17.999 12.205 16.579 10.794 11.999 15.374 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            <CombinedGeometry options:Freeze="True">
+                <CombinedGeometry.Geometry1>
+                    M7.409,5.794L5.999 7.205 11.999 13.204 17.999 7.205 16.579 5.794 11.999 10.375 z
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    M7.409,0.794L5.999 2.205 11.999 8.205 17.999 2.205 16.579 0.794 11.999 5.375 z
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+
+    <!-- /Chevrons -->
+
+</ResourceDictionary>

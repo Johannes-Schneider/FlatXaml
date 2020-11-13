@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatWindowStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatDialogStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatIconStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatIconButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatTextButtonStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatIconCheckBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatComboBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatGroupBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatInputHintTextBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatListBoxStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

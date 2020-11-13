@@ -13,6 +13,8 @@
         <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatGroupBoxStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatInputHintTextBoxStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatListBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatLabelStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatProgressBarStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

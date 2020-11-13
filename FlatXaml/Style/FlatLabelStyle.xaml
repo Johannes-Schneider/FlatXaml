@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:view="clr-namespace:FlatXaml.View"
+                    xmlns:style="clr-namespace:FlatXaml.Style"
+                    xmlns:theme="clr-namespace:FlatXaml.Theme">
+
+    <Style TargetType="{x:Type view:FlatLabel}" x:Key="{x:Static style:FlatStyleKeys.Label}">
+        <Setter Property="FontFamily" Value="{DynamicResource {x:Static theme:FlatThemeKeys.FontFamilyRegular}}" />
+        <Setter Property="FontSize" Value="{DynamicResource {x:Static theme:FlatThemeKeys.FontSizeRegular}}" />
+        <Setter Property="Background" Value="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}" />
+    </Style>
+
+</ResourceDictionary>

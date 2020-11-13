@@ -7,20 +7,20 @@
         <ResourceDictionary>
 
             <!-- Font -->
-            
+
             <FontFamily x:Key="{x:Static theme:FlatThemeKeys.FontFamilyRegular}">pack://application:,,,/FlatXaml;component/Resource/Font/SourceSansPro/#Source Sans Pro</FontFamily>
             <system:Double x:Key="{x:Static theme:FlatThemeKeys.FontSizeRegular}">16</system:Double>
-            
+
             <FontFamily x:Key="{x:Static theme:FlatThemeKeys.FontFamilyHint}">pack://application:,,,/FlatXaml;component/Resource/Font/SourceSansPro/#Source Sans Pro Italic</FontFamily>
             <system:Double x:Key="{x:Static theme:FlatThemeKeys.FontSizeHint}">14</system:Double>
-            
+
             <FontFamily x:Key="{x:Static theme:FlatThemeKeys.FontFamilyTitle}">pack://application:,,,/FlatXaml;component/Resource/Font/SourceSansPro/#Source Sans Pro Black</FontFamily>
             <system:Double x:Key="{x:Static theme:FlatThemeKeys.FontSizeTitle}">24</system:Double>
-            
+
             <!-- /Font -->
-            
+
             <!-- Colors -->
-            
+
             <Color x:Key="{x:Static theme:FlatThemeKeys.BackgroundDarkColor}">#c9c6be</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.BackgroundRegularColor}">#fcf9f0</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.BackgroundLightColor}">#ffffff</Color>
@@ -30,7 +30,7 @@
             <Color x:Key="{x:Static theme:FlatThemeKeys.ForegroundRegularColor}">#424242</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.ForegroundLightColor}">#6d6d6d</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.ForegroundDisabledColor}">#9b9b9b</Color>
-            
+
             <Color x:Key="{x:Static theme:FlatThemeKeys.PositiveDarkColor}">#00701a</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.PositiveRegularColor}">#43a047</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.PositiveLightColor}">#76d275</Color>
@@ -40,16 +40,16 @@
             <Color x:Key="{x:Static theme:FlatThemeKeys.NegativeRegularColor}">#e53935</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.NegativeLightColor}">#ff6f60</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.NegativeDisabledColor}">#740000</Color>
-            
+
             <Color x:Key="{x:Static theme:FlatThemeKeys.HighlightDarkColor}">#005cb2</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.HighlightRegularColor}">#1e88e5</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.HighlightLightColor}">#6ab7ff</Color>
             <Color x:Key="{x:Static theme:FlatThemeKeys.HighlightDisabledColor}">#003482</Color>
-            
+
             <!-- /Colors -->
 
         </ResourceDictionary>
-        <ResourceDictionary.Source>pack://application:,,,/FlatXaml;component/Theme/FlatThemeBrushes.xaml</ResourceDictionary.Source>
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Theme/FlatThemeBrushes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

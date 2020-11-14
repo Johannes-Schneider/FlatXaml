@@ -1,7 +1,5 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using FlatXaml.Annotations;
 using FlatXaml.Model;
 using FlatXaml.Style;
 
@@ -9,11 +7,10 @@ namespace FlatXaml.View
 {
     public class FlatProgression : Control
     {
-        [NotNull]
-        public Progression Progression
+        public Progression? Progression
         {
-            get => GetValue(ProgressionProperty) as Progression ?? throw new NullReferenceException($"{nameof(Progression)} must not be {null}!");
-            set => SetValue(ProgressionProperty, value ?? throw new ArgumentNullException(nameof(value)));
+            get => GetValue(ProgressionProperty) as Progression;
+            set => SetValue(ProgressionProperty, value);
         }
 
         public static readonly DependencyProperty ProgressionProperty = DependencyProperty.Register(nameof(Progression), typeof(Progression), typeof(FlatProgression));

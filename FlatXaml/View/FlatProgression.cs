@@ -16,10 +16,11 @@ namespace FlatXaml.View
             set => SetValue(ProgressionProperty, value ?? throw new ArgumentNullException(nameof(value)));
         }
 
-        public static readonly DependencyProperty ProgressionProperty = DependencyProperty.Register(nameof(Progression), typeof(Progression), typeof(FlatProgression), new PropertyMetadata(new Progression()));
+        public static readonly DependencyProperty ProgressionProperty = DependencyProperty.Register(nameof(Progression), typeof(Progression), typeof(FlatProgression));
 
         public FlatProgression()
         {
+            Progression = new Progression();
             Style = Application.Current?.Resources[FlatStyleKeys.Progression] as System.Windows.Style;
         }
     }

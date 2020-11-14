@@ -15,6 +15,8 @@
         <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatListBoxStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatLabelStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatProgressBarStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatProgressionStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatWindowControlBarStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

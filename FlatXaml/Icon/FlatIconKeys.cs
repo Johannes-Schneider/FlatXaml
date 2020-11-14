@@ -7,6 +7,8 @@
         public const string Check = nameof(Check);
         public const string Settings = nameof(Settings);
         public const string Rectangle = nameof(Rectangle);
+        public const string Copy = nameof(Copy);
+        public const string GitHub = nameof(GitHub);
 
     #region Chevrons
 

@@ -13,6 +13,9 @@
 
             <FontFamily x:Key="{x:Static theme:FlatThemeKeys.FontFamilyHint}">pack://application:,,,/FlatXaml;component/Resource/Font/SourceSansPro/#Source Sans Pro Italic</FontFamily>
             <system:Double x:Key="{x:Static theme:FlatThemeKeys.FontSizeHint}">14</system:Double>
+            
+            <FontFamily x:Key="{x:Static theme:FlatThemeKeys.FontFamilyHeadline}">pack://application:,,,/FlatXaml;component/Resource/Font/SourceSansPro/#Source Sans Pro Bold</FontFamily>
+            <system:Double x:Key="{x:Static theme:FlatThemeKeys.FontSizeHeadline}">20</system:Double>
 
             <FontFamily x:Key="{x:Static theme:FlatThemeKeys.FontFamilyTitle}">pack://application:,,,/FlatXaml;component/Resource/Font/SourceSansPro/#Source Sans Pro Black</FontFamily>
             <system:Double x:Key="{x:Static theme:FlatThemeKeys.FontSizeTitle}">24</system:Double>

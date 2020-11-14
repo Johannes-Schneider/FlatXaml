@@ -1,0 +1,97 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:view="clr-namespace:FlatXaml.View"
+                    xmlns:style="clr-namespace:FlatXaml.Style"
+                    xmlns:theme="clr-namespace:FlatXaml.Theme">
+
+    <Style TargetType="{x:Type view:FlatProgression}" x:Key="{x:Static style:FlatStyleKeys.Progression}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}" />
+        <Setter Property="FontFamily" Value="{DynamicResource {x:Static theme:FlatThemeKeys.FontFamilyRegular}}" />
+        <Setter Property="FontSize" Value="{DynamicResource {x:Static theme:FlatThemeKeys.FontSizeRegular}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type view:FlatProgression}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Headline -->
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="{DynamicResource {x:Static theme:FlatThemeKeys.FontSizeTitle}}"
+                                   DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Progression}"
+                                   Text="{Binding Path=Headline, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <!-- /Headline -->
+
+                        <!-- Current Step -->
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Margin="0, 18, 0, 0"
+                                   DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Progression}">
+                            <Run Text="(" />
+                            <Run Text="{Binding Path=CurrentStepNumber, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Run Text=" / " />
+                            <Run Text="{Binding Path=TotalNumberOfSteps, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Run Text=") " />
+                            <Run Text="{Binding Path=CurrentStepDescription, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </TextBlock>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Center"
+                                   Margin="0, 18, 0, 0"
+                                   DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Progression}"
+                                   Text="{Binding Path=CurrentStepProgress, StringFormat=P0, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <view:FlatProgressBar Grid.Column="0"
+                                              Grid.Row="2"
+                                              HorizontalAlignment="Stretch"
+                                              VerticalAlignment="Center"
+                                              Margin="0, 6, 0, 0"
+                                              DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Progression}"
+                                              Value="{Binding Path=CurrentStepProgress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <!-- /Current Step -->
+
+                        <!-- Total Progress -->
+
+                        <view:FlatProgressBar Grid.Column="0"
+                                              Grid.Row="3"
+                                              HorizontalAlignment="Stretch"
+                                              VerticalAlignment="Center"
+                                              Margin="0, 3, 0, 0"
+                                              DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Progression}"
+                                              Value="{Binding Path=TotalProgress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="4"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Center"
+                                   Margin="0, 6, 0, 0"
+                                   DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Progression}"
+                                   Text="{Binding Path=TotalProgress, StringFormat=P0, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <!-- /Total Progress -->
+
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

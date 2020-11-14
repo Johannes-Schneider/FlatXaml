@@ -15,5 +15,6 @@
         public const string ListBoxStyle = nameof(ListBoxStyle);
         public const string Label = nameof(Label);
         public const string ProgressBar = nameof(ProgressBar);
+        public const string Progression = nameof(Progression);
     }
 }

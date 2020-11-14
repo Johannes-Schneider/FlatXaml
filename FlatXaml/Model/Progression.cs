@@ -11,7 +11,16 @@ namespace FlatXaml.Model
         private const int MinimumNumberOfSteps = 1;
         private const double MinimumProgress = 0.0d;
         private const double MaximumProgress = 1.0d;
-        
+
+        private string _headline = string.Empty;
+
+        [NotNull]
+        public string Headline
+        {
+            get => _headline;
+            set => MutateVerboseIfNotNull(ref _headline, value);
+        }
+
         private string _currentStepDescription = string.Empty;
 
         [NotNull]

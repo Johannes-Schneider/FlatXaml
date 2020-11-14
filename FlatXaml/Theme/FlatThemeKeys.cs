@@ -10,6 +10,9 @@
         public const string FontFamilyHint = nameof(FontFamilyHint);
         public const string FontSizeHint = nameof(FontSizeHint);
         
+        public const string FontFamilyHeadline = nameof(FontFamilyHeadline);
+        public const string FontSizeHeadline = nameof(FontSizeHeadline);
+        
         public const string FontFamilyTitle = nameof(FontFamilyTitle);
         public const string FontSizeTitle = nameof(FontSizeTitle);
 

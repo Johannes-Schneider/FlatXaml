@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using FlatXaml.Extension;
 
 namespace FlatXaml.Command
@@ -85,5 +86,16 @@ namespace FlatXaml.Command
 
                                                                                        Clipboard.SetText(parameter.ToString() ?? string.Empty);
                                                                                    });
+
+        public static GenericCommand OpenUrl { get; } = new GenericCommand(parameter => parameter is string,
+                                                                           parameter =>
+                                                                           {
+                                                                               if (!(parameter is string stringParameter))
+                                                                               {
+                                                                                   return;
+                                                                               }
+
+                                                                               Process.Start(stringParameter);
+                                                                           });
     }
 }

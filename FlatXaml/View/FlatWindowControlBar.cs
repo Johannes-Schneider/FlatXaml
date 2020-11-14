@@ -29,7 +29,7 @@ namespace FlatXaml.View
             set => SetValue(CanMinimizeProperty, value);
         }
         
-        public static readonly DependencyProperty CanMinimizeProperty = DependencyProperty.Register(nameof(CanMaximize), typeof(bool), typeof(FlatWindowControlBar), new PropertyMetadata(true));
+        public static readonly DependencyProperty CanMinimizeProperty = DependencyProperty.Register(nameof(CanMinimize), typeof(bool), typeof(FlatWindowControlBar), new PropertyMetadata(true));
 
         public bool CanOpenSettings
         {

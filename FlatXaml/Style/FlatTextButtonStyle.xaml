@@ -9,25 +9,52 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type view:FlatTextButton}" x:Key="{x:Static style:FlatStyleKeys.TextButton}" BasedOn="{StaticResource {x:Static style:FlatStyleKeys.Button}}">
-        <Setter Property="ContentTemplate">
+        <Setter Property="Template">
             <Setter.Value>
-                <DataTemplate>
-                    <DataTemplate.Resources>
-                        <converter:IsNotNullConverter x:Key="IsNotNullConverter" />
-                    </DataTemplate.Resources>
+                <ControlTemplate TargetType="{x:Type view:FlatTextButton}">
+                    <Border x:Name="Border"
+                            SnapsToDevicePixels="True"
+                            Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
+                            BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}"
+                            BorderThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderThickness}">
 
-                    <Border x:Name="TextBorder"
-                            Margin="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatTextButton}}, Path=Padding}">
+                        <Border x:Name="TextBorder"
+                                Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Padding}">
 
-                        <TextBlock x:Name="Text"
-                                   VerticalAlignment="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatTextButton}}, Path=VerticalContentAlignment}"
-                                   HorizontalAlignment="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatTextButton}}, Path=HorizontalContentAlignment}"
-                                   MaxWidth="{Binding ElementName=TextBorder, Path=ActualWidth}"
-                                   TextWrapping="Wrap"
-                                   Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatTextButton}}, Path=Text}"
-                                   Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatTextButton}}, Path=Foreground}" />
+                            <TextBlock x:Name="Text"
+                                       VerticalAlignment="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=VerticalContentAlignment}"
+                                       HorizontalAlignment="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=HorizontalContentAlignment}"
+                                       MaxWidth="{Binding ElementName=TextBorder, Path=ActualWidth}"
+                                       TextWrapping="Wrap"
+                                       Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Text}"
+                                       Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}" />
+                        </Border>
                     </Border>
-                </DataTemplate>
+                    <ControlTemplate.Triggers>
+
+                        <!-- Hovered -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenHovered}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenHovered}" />
+                        </Trigger>
+                        <!-- /Hovered -->
+
+                        <!-- Pressed -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenPressed}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenPressed}" />
+                        </Trigger>
+                        <!-- /Pressed -->
+
+                        <!-- Disabled -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenDisabled}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenDisabled}" />
+                        </Trigger>
+                        <!-- /Disabled -->
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>

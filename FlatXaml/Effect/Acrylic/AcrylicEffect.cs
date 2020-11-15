@@ -9,13 +9,6 @@ namespace FlatXaml.Effect.Acrylic
 {
     public class AcrylicEffect : ShaderEffect
     {
-        public static readonly DependencyProperty InputProperty = RegisterPixelShaderSamplerProperty(nameof(Input), MethodBase.GetCurrentMethod().DeclaringType, 0);
-
-        public static readonly DependencyProperty RandomInputProperty = RegisterPixelShaderSamplerProperty(nameof(RandomInput), MethodBase.GetCurrentMethod().DeclaringType, 1);
-
-        public static readonly DependencyProperty RatioProperty = DependencyProperty.Register(nameof(Ratio), typeof(double), MethodBase.GetCurrentMethod().DeclaringType,
-                                                                                              new UIPropertyMetadata(0.15d, PixelShaderConstantCallback(0)));
-
         public Brush? Input
         {
             get => GetValue(InputProperty) as Brush;
@@ -25,6 +18,8 @@ namespace FlatXaml.Effect.Acrylic
                 UpdateShaderValue(InputProperty);
             }
         }
+        
+        public static readonly DependencyProperty InputProperty = RegisterPixelShaderSamplerProperty(nameof(Input), typeof(AcrylicEffect), 0);
 
         public Brush RandomInput
         {
@@ -35,6 +30,9 @@ namespace FlatXaml.Effect.Acrylic
                 UpdateShaderValue(RandomInputProperty);
             }
         }
+        
+        public static readonly DependencyProperty RandomInputProperty = RegisterPixelShaderSamplerProperty(nameof(RandomInput), typeof(AcrylicEffect), 1);
+
 
         public double Ratio
         {
@@ -45,14 +43,17 @@ namespace FlatXaml.Effect.Acrylic
                 UpdateShaderValue(RatioProperty);
             }
         }
+        
+        public static readonly DependencyProperty RatioProperty = DependencyProperty.Register(nameof(Ratio), typeof(double), typeof(AcrylicEffect),
+                                                                                              new UIPropertyMetadata(0.15d, PixelShaderConstantCallback(0)));
 
         public AcrylicEffect()
         {
-            var pixelShader = new PixelShader {UriSource = new Uri("pack://application:,,,/OpenVPNAdmin;component/View/Effect/Acrylic/Shader.ps")};
+            var pixelShader = new PixelShader {UriSource = new Uri("pack://application:,,,/FlatXaml;component/Effect/Acrylic/Shader.ps")};
             PixelShader = pixelShader;
             var bitmap = new BitmapImage();
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri("pack://application:,,,/OpenVPNAdmin;component/View/Effect/Acrylic/Noise.png");
+            bitmap.UriSource = new Uri("pack://application:,,,/FlatXaml;component/Effect/Acrylic/Noise.png");
             bitmap.EndInit();
             RandomInput =
                 new ImageBrush(bitmap)

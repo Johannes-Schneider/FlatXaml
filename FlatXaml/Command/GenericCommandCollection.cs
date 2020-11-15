@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Windows;
 using FlatXaml.Extension;
 
@@ -95,7 +96,31 @@ namespace FlatXaml.Command
                                                                                    return;
                                                                                }
 
-                                                                               Process.Start(stringParameter);
+                                                                               try
+                                                                               {
+                                                                                   Process.Start(stringParameter);
+                                                                               }
+                                                                               catch
+                                                                               {
+                                                                                   // hack because of this: https://github.com/dotnet/corefx/issues/10361
+                                                                                   if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                                                                                   {
+                                                                                       stringParameter = stringParameter.Replace("&", "^&");
+                                                                                       Process.Start(new ProcessStartInfo("cmd", $"/c start {stringParameter}") {CreateNoWindow = true});
+                                                                                   }
+                                                                                   else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                                                                                   {
+                                                                                       Process.Start("xdg-open", stringParameter);
+                                                                                   }
+                                                                                   else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                                                                                   {
+                                                                                       Process.Start("open", stringParameter);
+                                                                                   }
+                                                                                   else
+                                                                                   {
+                                                                                       throw;
+                                                                                   }
+                                                                               }
                                                                            });
     }
 }

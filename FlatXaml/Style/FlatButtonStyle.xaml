@@ -20,7 +20,7 @@
         <Setter Property="ForegroundWhenDisabled" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDisabled}}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type view:FlatIconButton}">
+                <ControlTemplate TargetType="{x:Type view:FlatButton}">
                     <Border x:Name="Border"
                             SnapsToDevicePixels="True"
                             Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"

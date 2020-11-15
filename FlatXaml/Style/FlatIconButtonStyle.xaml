@@ -10,35 +10,65 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type view:FlatIconButton}" x:Key="{x:Static style:FlatStyleKeys.IconButton}" BasedOn="{StaticResource {x:Static style:FlatStyleKeys.Button}}">
-        <Setter Property="ContentTemplate">
+        <Setter Property="IconSize" Value="18" />
+        <Setter Property="Template">
             <Setter.Value>
-                <DataTemplate>
-                    <DataTemplate.Resources>
+                <ControlTemplate TargetType="{x:Type view:FlatIconButton}">
+                    <ControlTemplate.Resources>
                         <converter:IsNotNullConverter x:Key="IsNotNullConverter" />
-                    </DataTemplate.Resources>
+                    </ControlTemplate.Resources>
 
-                    <view:FlatIcon x:Name="Icon"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   Source="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatIconButton}}, Path=Icon}"
-                                   Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatIconButton}}, Path=Foreground}"
-                                   Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatIconButton}}, Path=IconSize}"
-                                   Height="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatIconButton}}, Path=IconSize}" />
+                    <Border x:Name="Border"
+                            SnapsToDevicePixels="True"
+                            Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
+                            BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}"
+                            BorderThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderThickness}">
 
-                    <DataTemplate.Triggers>
+                        <view:FlatIcon x:Name="Icon"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
+                                       Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}"
+                                       Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconSize}"
+                                       Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconSize}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+
+                        <!-- Hovered -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackgroundWhenHovered}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrushWhenHovered}" />
+                            <Setter TargetName="Icon" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ForegroundWhenHovered}" />
+                        </Trigger>
+                        <!-- /Hovered -->
+
+                        <!-- Pressed -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenPressed}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenPressed}" />
+                            <Setter TargetName="Icon" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ForegroundWhenPressed}" />
+                        </Trigger>
+                        <!-- /Pressed -->
+
+                        <!-- Disabled -->
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenDisabled}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenDisabled}" />
+                            <Setter TargetName="Icon" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ForegroundWhenDisabled}" />
+                        </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Property="IsEnabled" Value="False" />
-                                <Condition
-                                    Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatIconButton}}, Path=IconWhenDisabled, Converter={StaticResource IsNotNullConverter}}"
-                                    Value="True" />
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False" />
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IconWhenDisabled, Converter={StaticResource IsNotNullConverter}}" Value="True" />
                             </MultiDataTrigger.Conditions>
                             <MultiDataTrigger.Setters>
-                                <Setter TargetName="Icon" Property="Source" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type view:FlatIconButton}}, Path=IconWhenDisabled}" />
+                                <Setter TargetName="Icon" Property="Source" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconWhenDisabled}" />
                             </MultiDataTrigger.Setters>
                         </MultiDataTrigger>
-                    </DataTemplate.Triggers>
-                </DataTemplate>
+                        <!-- /Disabled -->
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>

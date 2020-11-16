@@ -17,5 +17,6 @@
         public const string ProgressBar = nameof(ProgressBar);
         public const string Progression = nameof(Progression);
         public const string WindowControlBar = nameof(WindowControlBar);
+        public const string Badge = nameof(Badge);
     }
 }

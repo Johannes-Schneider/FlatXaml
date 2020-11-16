@@ -79,6 +79,34 @@ namespace FlatXaml.View
 
     #endregion
 
+    #region Disabled
+
+        public Brush? IconForegroundWhenDisabled
+        {
+            get => GetValue(IconForegroundWhenDisabledProperty) as Brush;
+            set => SetValue(IconForegroundWhenDisabledProperty, value);
+        }
+        
+        public static readonly DependencyProperty IconForegroundWhenDisabledProperty = DependencyProperty.Register(nameof(IconForegroundWhenDisabled), typeof(Brush), typeof(FlatIconCheckBox));
+
+        public Brush? IconBackgroundWhenDisabled
+        {
+            get => GetValue(IconBackgroundWhenDisabledProperty) as Brush;
+            set => SetValue(IconBackgroundWhenDisabledProperty, value);
+        }
+        
+        public static readonly DependencyProperty IconBackgroundWhenDisabledProperty = DependencyProperty.Register(nameof(IconBackgroundWhenDisabled), typeof(Brush), typeof(FlatIconCheckBox));
+
+        public Brush? BackgroundWhenDisabled
+        {
+            get => GetValue(BackgroundWhenDisabledProperty) as Brush;
+            set => SetValue(BackgroundWhenDisabledProperty, value);
+        }
+        
+        public static readonly DependencyProperty BackgroundWhenDisabledProperty = DependencyProperty.Register(nameof(BackgroundWhenDisabled), typeof(Brush), typeof(FlatIconCheckBox));
+
+    #endregion
+
         public FlatIconCheckBox()
         {
             Style = Application.Current?.Resources[FlatStyleKeys.IconCheckBox] as System.Windows.Style;

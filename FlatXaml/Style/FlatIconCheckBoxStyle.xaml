@@ -19,6 +19,10 @@
         <Setter Property="IconForegroundWhenChecked" Value="{DynamicResource {x:Static theme:FlatThemeKeys.PositiveRegular}}" />
         <Setter Property="IconWhenChecked" Value="{DynamicResource {x:Static icon:FlatIconKeys.Check}}" />
 
+        <Setter Property="BackgroundWhenDisabled" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDisabled}}" />
+        <Setter Property="IconBackgroundWhenDisabled" Value="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}" />
+        <Setter Property="IconForegroundWhenDisabled" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDisabled}}" />
+
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Template">
@@ -49,7 +53,8 @@
                             CornerRadius="11">
 
                         <Grid>
-                            <Border Width="18"
+                            <Border x:Name="IconBackgroundNotChecked"
+                                    Width="18"
                                     Height="18"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
@@ -58,7 +63,8 @@
                                     Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconBackgroundWhenNotChecked}"
                                     Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Converter={StaticResource FalseToVisible}}">
 
-                                <view:FlatIcon Width="16"
+                                <view:FlatIcon x:Name="IconNotChecked"
+                                               Width="16"
                                                Height="16"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -67,7 +73,8 @@
 
                             </Border>
 
-                            <Border Width="18"
+                            <Border x:Name="IconBackgroundChecked"
+                                    Width="18"
                                     Height="18"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center"
@@ -76,7 +83,8 @@
                                     Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconBackgroundWhenChecked}"
                                     Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Converter={StaticResource TrueToVisible}}">
 
-                                <view:FlatIcon Width="16"
+                                <view:FlatIcon x:Name="IconChecked"
+                                               Width="16"
                                                Height="16"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
@@ -90,6 +98,33 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackgroundWhenChecked}" />
                         </Trigger>
+                        
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackgroundWhenDisabled}" />
+                        </Trigger>
+
+                        <!-- Checked && !IsEnabled -->
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="True" />
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="IconBackgroundChecked" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconBackgroundWhenDisabled}" />
+                            <Setter TargetName="IconChecked" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconForegroundWhenDisabled}" />
+                        </MultiDataTrigger>
+                        <!-- /Checked && !IsEnabled -->
+
+                        <!-- !Checked && !IsEnabled -->
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="False" />
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsEnabled}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="IconBackgroundNotChecked" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconBackgroundWhenDisabled}" />
+                            <Setter TargetName="IconNotChecked" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconForegroundWhenDisabled}" />
+                        </MultiDataTrigger>
+                        <!-- /Checked && !IsEnabled -->
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

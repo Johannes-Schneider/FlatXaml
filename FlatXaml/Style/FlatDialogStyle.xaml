@@ -62,16 +62,20 @@
                                              Command="{x:Static command:GenericCommandCollection.CancelDialog}"
                                              CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <ScrollViewer Grid.Column="1"
-                                      Grid.Row="1"
-                                      Padding="18"
-                                      HorizontalScrollBarVisibility="Auto"
-                                      VerticalScrollBarVisibility="Auto"
-                                      Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}">
+                        <Border Grid.Column="1"
+                                Grid.Row="1"
+                                Padding="3"
+                                CornerRadius="3"
+                                Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}">
 
-                            <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}" />
+                            <ScrollViewer Padding="18"
+                                          HorizontalScrollBarVisibility="Auto"
+                                          VerticalScrollBarVisibility="Auto">
 
-                        </ScrollViewer>
+                                <ContentPresenter Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}" />
+
+                            </ScrollViewer>
+                        </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

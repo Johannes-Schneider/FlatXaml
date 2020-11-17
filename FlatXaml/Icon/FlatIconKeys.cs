@@ -9,6 +9,8 @@
         public const string Rectangle = nameof(Rectangle);
         public const string Copy = nameof(Copy);
         public const string GitHub = nameof(GitHub);
+        public const string Invisible = nameof(Invisible);
+        public const string Visible = nameof(Visible);
 
     #region Chevrons
 

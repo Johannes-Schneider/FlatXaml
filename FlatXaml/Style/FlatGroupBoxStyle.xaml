@@ -2,7 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:style="clr-namespace:FlatXaml.Style"
                     xmlns:theme="clr-namespace:FlatXaml.Theme"
-                    xmlns:view="clr-namespace:FlatXaml.View">
+                    xmlns:view="clr-namespace:FlatXaml.View"
+                    xmlns:converter="clr-namespace:FlatXaml.Converter"
+                    xmlns:icon="clr-namespace:FlatXaml.Icon">
 
     <Style TargetType="{x:Type view:FlatGroupBox}" x:Key="{x:Static style:FlatStyleKeys.GroupBox}">
         <Setter Property="Background" Value="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}" />
@@ -11,6 +13,15 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type view:FlatGroupBox}">
+                    <ControlTemplate.Resources>
+                        <converter:BoolToVisibilityConverter x:Key="TrueToVisible"
+                                                             TrueValue="Visible"
+                                                             FalseValue="Collapsed" />
+                        <converter:BoolToVisibilityConverter x:Key="TrueToCollapsed"
+                                                             TrueValue="Collapsed"
+                                                             FalseValue="Visible" />
+                        <converter:InvertBoolConverter x:Key="Invert" />
+                    </ControlTemplate.Resources>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -25,10 +36,12 @@
                                 Margin="0, 9, 0, 0"
                                 SnapsToDevicePixels="True"
                                 BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}"
-                                Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" />
+                                Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
+                                Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsCollapsed, Converter={StaticResource TrueToCollapsed}}" />
 
                         <ContentPresenter Grid.Row="1"
-                                          Margin="6" />
+                                          Margin="6"
+                                          Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsCollapsed, Converter={StaticResource TrueToCollapsed}}" />
 
                         <Border Grid.Row="0"
                                 Margin="6, 0, 6, 0"
@@ -39,8 +52,20 @@
                                 SnapsToDevicePixels="True"
                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}">
 
-                            <ContentPresenter ContentSource="Header"
-                                              RecognizesAccessKey="True" />
+                            <StackPanel Orientation="Horizontal">
+
+                                <view:FlatIconCheckBox x:Name="ToggleIsCollapsed"
+                                                       Margin="0, 0, 6, 0"
+                                                       Foreground="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}"
+                                                       Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
+                                                       Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CanCollapse, Converter={StaticResource TrueToVisible}}"
+                                                       IconWhenNotChecked="{DynamicResource {x:Static icon:FlatIconKeys.Invisible}}"
+                                                       IconWhenChecked="{DynamicResource {x:Static icon:FlatIconKeys.Visible}}"
+                                                       IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsCollapsed, Converter={StaticResource Invert}}" />
+
+                                <ContentPresenter ContentSource="Header"
+                                                  RecognizesAccessKey="True" />
+                            </StackPanel>
                         </Border>
                     </Grid>
                 </ControlTemplate>

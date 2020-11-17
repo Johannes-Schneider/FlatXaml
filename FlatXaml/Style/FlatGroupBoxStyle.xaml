@@ -33,7 +33,7 @@
                                 Grid.RowSpan="2"
                                 BorderThickness="1"
                                 CornerRadius="2"
-                                Margin="0, 9, 0, 0"
+                                Margin="0, 14, 0, 0"
                                 SnapsToDevicePixels="True"
                                 BorderBrush="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}"
                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
@@ -43,19 +43,22 @@
                                           Margin="6"
                                           Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsCollapsed, Converter={StaticResource TrueToCollapsed}}" />
 
-                        <Border Grid.Row="0"
-                                Margin="6, 0, 6, 0"
-                                BorderThickness="0"
-                                HorizontalAlignment="Left"
+                        <Border x:Name="HeaderBorder"
+                                Grid.Row="0"
+                                BorderThickness="1"
+                                BorderBrush="Transparent"
+                                HorizontalAlignment="Stretch"
                                 VerticalAlignment="Center"
-                                Padding="3, 0, 3, 0"
+                                Padding="3"
                                 SnapsToDevicePixels="True"
-                                Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}">
+                                Background="Transparent">
 
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Left"
+                                        Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}">
 
                                 <view:FlatIconCheckBox x:Name="ToggleIsCollapsed"
-                                                       Margin="0, 0, 6, 0"
+                                                       Margin="3, 0, 9, 0"
                                                        Foreground="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}"
                                                        Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                                                        Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CanCollapse, Converter={StaticResource TrueToVisible}}"
@@ -64,10 +67,18 @@
                                                        IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsCollapsed, Converter={StaticResource Invert}}" />
 
                                 <ContentPresenter ContentSource="Header"
+                                                  Margin="0, 0, 3, 0"
                                                   RecognizesAccessKey="True" />
                             </StackPanel>
                         </Border>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsCollapsed" Value="True">
+                            <Setter TargetName="HeaderBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush}" />
+                            <Setter TargetName="HeaderBorder" Property="CornerRadius" Value="2" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

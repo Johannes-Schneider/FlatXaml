@@ -47,7 +47,7 @@ namespace FlatXaml.Command
                                                                                                                      });
                                                                                         });
 
-        public static GenericCommand ConfirmDialog { get; } = new GenericCommand(parameter => parameter is Window window && window.HasValidationErrors(),
+        public static GenericCommand ConfirmDialog { get; } = new GenericCommand(parameter => parameter is Window window && !window.HasValidationErrors(),
                                                                                  parameter =>
                                                                                  {
                                                                                      if (!(parameter is Window window) || window.HasValidationErrors())

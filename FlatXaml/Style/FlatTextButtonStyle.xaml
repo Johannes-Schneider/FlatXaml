@@ -2,13 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:view="clr-namespace:FlatXaml.View"
                     xmlns:style="clr-namespace:FlatXaml.Style"
-                    xmlns:converter="clr-namespace:FlatXaml.Converter">
+                    xmlns:converter="clr-namespace:FlatXaml.Converter"
+                    xmlns:theme="clr-namespace:FlatXaml.Theme">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/FlatXaml;component/Style/FlatButtonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type view:FlatTextButton}" x:Key="{x:Static style:FlatStyleKeys.TextButton}" BasedOn="{StaticResource {x:Static style:FlatStyleKeys.Button}}">
+        <Setter Property="ForegroundWhenDisabled" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundLight}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type view:FlatTextButton}">
@@ -36,6 +38,7 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenHovered}" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenHovered}" />
+                            <Setter TargetName="Text" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ForegroundWhenHovered}" />
                         </Trigger>
                         <!-- /Hovered -->
 
@@ -43,6 +46,7 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenPressed}" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenPressed}" />
+                            <Setter TargetName="Text" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ForegroundWhenPressed}" />
                         </Trigger>
                         <!-- /Pressed -->
 
@@ -50,6 +54,7 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BackgroundWhenDisabled}" />
                             <Setter TargetName="Border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrushWhenDisabled}" />
+                            <Setter TargetName="Text" Property="Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ForegroundWhenDisabled}" />
                         </Trigger>
                         <!-- /Disabled -->
 

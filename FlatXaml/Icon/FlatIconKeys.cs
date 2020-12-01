@@ -4,6 +4,7 @@
     {
         public const string Cross = nameof(Cross);
         public const string Minus = nameof(Minus);
+        public const string Plus = nameof(Plus);
         public const string Check = nameof(Check);
         public const string Settings = nameof(Settings);
         public const string Rectangle = nameof(Rectangle);
@@ -11,6 +12,7 @@
         public const string GitHub = nameof(GitHub);
         public const string Invisible = nameof(Invisible);
         public const string Visible = nameof(Visible);
+        public const string Wrench = nameof(Wrench);
 
     #region Chevrons
 

@@ -77,4 +77,52 @@ namespace FlatXaml
             }
         }
     }
+
+    public static class NotifyPropertyChangedExtensions
+    {
+        public static bool MutateVerboseIfNotNull<TProperty>(this INotifyPropertyChanged self,
+                                                             ref TProperty property,
+                                                             TProperty value,
+                                                             PropertyChangedEventHandler? eventHandler,
+                                                             Dispatcher? dispatcher = null,
+                                                             [CallerMemberName] string? propertyName = null)
+        {
+            if (value == null)
+            {
+                return false;
+            }
+
+            return self.MutateVerbose(ref property, value, eventHandler, dispatcher, propertyName);
+        }
+        
+        public static bool MutateVerbose<TProperty>(this INotifyPropertyChanged self,
+                                                    ref TProperty property,
+                                                    TProperty value,
+                                                    PropertyChangedEventHandler? eventHandler,
+                                                    Dispatcher? dispatcher = null,
+                                                    [CallerMemberName] string? propertyName = null)
+        {
+            if (EqualityComparer<TProperty>.Default.Equals(property, value))
+            {
+                return false;
+            }
+
+            property = value;
+            if (eventHandler == null)
+            {
+                return true;
+            }
+
+            if (dispatcher == null || dispatcher.CheckAccess())
+            {
+                eventHandler.Invoke(self, new PropertyChangedEventArgs(propertyName));
+            }
+            else
+            {
+                dispatcher.Invoke(() => eventHandler.Invoke(self, new PropertyChangedEventArgs(propertyName)));
+            }
+
+            return true;
+        }
+    }
 }

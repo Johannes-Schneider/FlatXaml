@@ -21,7 +21,8 @@
                                                              FalseValue="Collapsed" />
                     </ControlTemplate.Resources>
 
-                    <Grid HorizontalAlignment="Stretch">
+                    <Grid HorizontalAlignment="Stretch"
+                          Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
@@ -37,6 +38,7 @@
 
 
                             <view:FlatIconButton Icon="{DynamicResource {x:Static icon:FlatIconKeys.Settings}}"
+                                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                                                  BackgroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}"
                                                  BackgroundWhenPressed="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDark}}"
                                                  ForegroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}"
@@ -46,6 +48,7 @@
                                                  CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=OpenSettingsCommandParameter}" />
 
                             <view:FlatIconButton Icon="{DynamicResource {x:Static icon:FlatIconKeys.Minus}}"
+                                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                                                  BackgroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}"
                                                  BackgroundWhenPressed="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDark}}"
                                                  ForegroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}"
@@ -55,6 +58,7 @@
                                                  CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
 
                             <view:FlatIconButton Icon="{DynamicResource {x:Static icon:FlatIconKeys.Rectangle}}"
+                                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                                                  BackgroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}"
                                                  BackgroundWhenPressed="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundDark}}"
                                                  ForegroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}"
@@ -64,6 +68,7 @@
                                                  CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
 
                             <view:FlatIconButton Icon="{DynamicResource {x:Static icon:FlatIconKeys.Cross}}"
+                                                 Background="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"
                                                  BackgroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.NegativeRegular}}"
                                                  BackgroundWhenPressed="{DynamicResource {x:Static theme:FlatThemeKeys.NegativeDark}}"
                                                  ForegroundWhenHovered="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}"

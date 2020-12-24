@@ -55,6 +55,14 @@ namespace FlatXaml.View
         
         public static readonly DependencyProperty OpenSettingsCommandParameterProperty = DependencyProperty.Register(nameof(OpenSettingsCommandParameter), typeof(object), typeof(FlatWindowControlBar));
 
+        public bool CanToggleStayOnTop
+        {
+            get => (bool) GetValue(CanToggleStayOnTopProperty);
+            set => SetValue(CanToggleStayOnTopProperty, value);
+        }
+        
+        public static readonly DependencyProperty CanToggleStayOnTopProperty = DependencyProperty.Register(nameof(CanToggleStayOnTop), typeof(bool), typeof(FlatWindowControlBar));
+        
         public FlatWindowControlBar()
         {
             Style = Application.Current?.Resources[FlatStyleKeys.WindowControlBar] as System.Windows.Style;

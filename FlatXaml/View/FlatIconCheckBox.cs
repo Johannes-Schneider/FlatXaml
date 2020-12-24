@@ -7,6 +7,14 @@ namespace FlatXaml.View
 {
     public class FlatIconCheckBox : CheckBox
     {
+        public double IconSize
+        {
+            get => (double) GetValue(IconSizeProperty);
+            set => SetValue(IconSizeProperty, value);
+        }
+        
+        public static readonly DependencyProperty IconSizeProperty = DependencyProperty.Register(nameof(IconSize), typeof(double), typeof(FlatIconCheckBox));
+        
     #region Checked
 
         public Geometry? IconWhenChecked

@@ -13,6 +13,8 @@
         public const string Invisible = nameof(Invisible);
         public const string Visible = nameof(Visible);
         public const string Wrench = nameof(Wrench);
+        public const string LockClosed = nameof(LockClosed);
+        public const string LockOpened = nameof(LockOpened);
 
     #region Chevrons
 

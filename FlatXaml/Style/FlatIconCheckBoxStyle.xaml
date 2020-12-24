@@ -9,6 +9,8 @@
     <Style TargetType="{x:Type view:FlatIconCheckBox}" x:Key="{x:Static style:FlatStyleKeys.IconCheckBox}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
 
+        <Setter Property="IconSize" Value="16" />
+
         <Setter Property="BackgroundWhenNotChecked" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}" />
         <Setter Property="IconBackgroundWhenNotChecked" Value="{DynamicResource {x:Static theme:FlatThemeKeys.BackgroundRegular}}" />
         <Setter Property="IconForegroundWhenNotChecked" Value="{DynamicResource {x:Static theme:FlatThemeKeys.ForegroundRegular}}" />
@@ -64,8 +66,8 @@
                                     Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Converter={StaticResource FalseToVisible}}">
 
                                 <view:FlatIcon x:Name="IconNotChecked"
-                                               Width="16"
-                                               Height="16"
+                                               Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconSize}"
+                                               Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconSize}"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
                                                Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconWhenNotChecked}"
@@ -84,8 +86,8 @@
                                     Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked, Converter={StaticResource TrueToVisible}}">
 
                                 <view:FlatIcon x:Name="IconChecked"
-                                               Width="16"
-                                               Height="16"
+                                               Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconSize}"
+                                               Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconSize}"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
                                                Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IconWhenChecked}"
@@ -98,7 +100,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackgroundWhenChecked}" />
                         </Trigger>
-                        
+
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackgroundWhenDisabled}" />
                         </Trigger>

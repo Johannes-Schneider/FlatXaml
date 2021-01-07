@@ -48,15 +48,8 @@ namespace FlatXaml
             {
                 return;
             }
-
-            if (EventDispatcher == null || EventDispatcher.CheckAccess())
-            {
-                PropertyAboutToChange.Invoke(this, new PropertyAboutToChangeEventArgs(propertyName, oldValue, newValue));
-            }
-            else
-            {
-                EventDispatcher.Invoke(() => PropertyAboutToChange.Invoke(this, new PropertyAboutToChangeEventArgs(propertyName, oldValue, newValue)));
-            }
+            
+            OnEventDispatcher(() => PropertyAboutToChange.Invoke(this, new PropertyAboutToChangeEventArgs(propertyName, oldValue, newValue)));
         }
 
         [NotifyPropertyChangedInvocator]
@@ -66,14 +59,19 @@ namespace FlatXaml
             {
                 return;
             }
+            
+            OnEventDispatcher(() => PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName)));
+        }
 
+        protected void OnEventDispatcher(Action action)
+        {
             if (EventDispatcher == null || EventDispatcher.CheckAccess())
             {
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                action.Invoke();
             }
             else
             {
-                EventDispatcher.Invoke(() => PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName)));
+                EventDispatcher.Invoke(action);
             }
         }
     }

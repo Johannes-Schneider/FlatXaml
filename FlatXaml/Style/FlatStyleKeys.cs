@@ -18,5 +18,6 @@
         public const string Progression = nameof(Progression);
         public const string WindowControlBar = nameof(WindowControlBar);
         public const string Badge = nameof(Badge);
+        public const string GridSplitter = nameof(GridSplitter);
     }
 }

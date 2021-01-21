@@ -15,6 +15,8 @@
         public const string Wrench = nameof(Wrench);
         public const string LockClosed = nameof(LockClosed);
         public const string LockOpened = nameof(LockOpened);
+        public const string PinStuck = nameof(PinStuck);
+        public const string PinLose = nameof(PinLose);
 
     #region Chevrons
 

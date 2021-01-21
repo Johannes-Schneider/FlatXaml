@@ -38,8 +38,8 @@
 
                             <view:FlatIconCheckBox Margin="0, 0, 12, 0"
                                                    IconSize="{DynamicResource {x:Static theme:FlatThemeKeys.FontSizeHint}}"
-                                                   IconWhenChecked="{DynamicResource {x:Static icon:FlatIconKeys.LockClosed}}"
-                                                   IconWhenNotChecked="{DynamicResource {x:Static icon:FlatIconKeys.LockOpened}}"
+                                                   IconWhenChecked="{DynamicResource {x:Static icon:FlatIconKeys.PinStuck}}"
+                                                   IconWhenNotChecked="{DynamicResource {x:Static icon:FlatIconKeys.PinLose}}"
                                                    VerticalAlignment="Center"
                                                    Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CanToggleStayOnTop, Converter={StaticResource TrueToVisibleConverter}}"
                                                    IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=Topmost, Mode=TwoWay}" />

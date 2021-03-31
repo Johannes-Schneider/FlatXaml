@@ -1,5 +1,4 @@
 ﻿using System;
-using FlatXaml.Annotations;
 
 namespace FlatXaml.Model
 {
